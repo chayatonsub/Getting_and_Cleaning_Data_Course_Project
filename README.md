@@ -17,7 +17,7 @@ The `run_analysis.R` script performs the following tasks:
 4. Labels the dataset with descriptive variable names
 5. Extracts only the means and standard deviations from the data
 6. Creates a tidy dataset with the average of each variable for each activity and each subject
-7. Write the tidy dataset to a text file called `tidy_data.txt`.
+7. Write the tidy dataset to a text file called `tidy_data.txt` (comma-separated).
 
 ## Documentation
 The `CodeBook.md` file provides a description of the variables, the data, and the transformations performed to clean the data.
