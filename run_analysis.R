@@ -35,4 +35,4 @@ final_data <- data %>%
   group_by(activity, subject) %>% 
   summarize_all(mean)
 
-write.table(final_data, "tidy_data.txt", sep = ",", row.names = TRUE)
+write.table(final_data, "tidy_data.txt", sep = ",", row.names = FALSE)
