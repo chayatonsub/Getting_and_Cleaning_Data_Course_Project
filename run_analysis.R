@@ -1,8 +1,14 @@
 if (!require("tidyverse")) install.packages("tidyverse")
 library(tidyverse)
 
-dir <- "UCI HAR Dataset"
+## download data
+path <- getwd()
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(url, file.path(path, "dataFiles.zip"))
+unzip(zipfile = "dataFiles.zip")
+
 ## read necessary tables
+dir <- "UCI HAR Dataset"
 activities <- read.table(paste(dir, "activity_labels.txt", sep="/"))
 features <- read.table(paste(dir, "features.txt", sep="/"))
 subject_test <- read.table(paste(dir, "test", "subject_test.txt", sep="/"))
@@ -35,4 +41,5 @@ final_data <- data %>%
   group_by(activity, subject) %>% 
   summarize_all(mean)
 
+final_data
 write.table(final_data, "tidy_data.txt", sep = ",", row.names = FALSE)
